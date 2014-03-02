@@ -10,7 +10,7 @@ Note:
         (only the src/extendPython.cc is the new feature)
     2. in python script(run.py),
         will use the created shared library just before to reset conditions, and
-        to run test() function to 2 times
+        to run test() function 2 times
 
 Compilation:
 -------------
