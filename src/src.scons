@@ -1,0 +1,24 @@
+'''
+ *  $Id: src.scons, 2014-03-02 14:03:43 chi $
+ *  Author(s):
+ *    Chi WANG (chiwang@mail.ustc.edu.cn) 20/09/2013
+ *  Note:
+ *    This file is invoked by ../SConstruct
+'''
+
+import os
+Import("*")     # import all vars from SConstruct
+print "\t\t\t invoke %s\n" % os.path.abspath("./")
+#--------------------------------------------------------------------
+
+#   set the programme name
+target=project+'main'
+env = envBase.Clone()
+
+#   include
+env.Append(CPPPATH = '../include')
+
+#   main build
+#env.Program('../'+target,Glob("*.cc"))
+env.SharedLibrary('../'+target,Glob("*.cc"))
+
